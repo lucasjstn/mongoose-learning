@@ -18,7 +18,9 @@ const userSchema = new mongoose.Schema({
   //using dedault
   createdAt: {
     type: Date,
-    default: ()=> Date.now()
+    default: ()=> Date.now(),
+    //using immutable propertie
+    immutable: true,
   }, 
   updatedAt: {
     type: Date,
