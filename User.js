@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema({
     //using min and max h
     min: 1,
     max: 100,
+    //using validate functions at the schrma
+    validate: {
+      validator: v => v % 2 === 0,
+      message: props => `${props.value} is not an even number`,
+    }
   }, 
   //example of a required property
   email: {
