@@ -7,7 +7,12 @@ const addressSchema = new mongoose.Schema({
 //create a schema
 const userSchema = new mongoose.Schema({
   name: String,
-  age: Number,
+  age: {
+    type: Number,
+    //using min and max h
+    min: 1,
+    max: 100,
+  }, 
   //example of a required property
   email: {
     type: String,
