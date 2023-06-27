@@ -8,9 +8,23 @@ const addressSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   name: String,
   age: Number,
-  email: String,
-  createdAt: String,
-  updatedAt: String,
+  //example of a required property
+  email: {
+    type: String,
+    required: true,
+    //using lowercase
+    lowercase: true,
+  },
+  //using dedault
+  createdAt: {
+    type: Date,
+    default: ()=> Date.now()
+  }, 
+  updatedAt: {
+    type: Date,
+    default: ()=> Date.now()
+  }, 
+
   bestFriend: mongoose.SchemaTypes.ObjectId,
   hobbies: [String],
   //using a schema as property
