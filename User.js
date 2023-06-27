@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema({
     required: true,
     //using lowercase
     lowercase: true,
+    //minLength and MaxLength property
+    minLength: 10,
+    maxLength: 30
   },
   //using dedault
   createdAt: {

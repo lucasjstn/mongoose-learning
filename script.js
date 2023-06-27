@@ -18,7 +18,7 @@ async function run() {
   try {
 
 
-    const user = await User.create({ name: "lucas", age: -4, email: "lucas7justino@gmail.com"})
+    const user = await User.create({ name: "lucas", age: -4, email: ".com"})
     // const user = new User({ name: "kyle", age: 22})
     // await user.save()
     console.log(user)
