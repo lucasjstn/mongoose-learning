@@ -16,14 +16,11 @@ mongoose.connect(process.env.DATABASE_CLOUD, { useNewUrlParser: true}).then(()=>
 
 async function run() {
   try {
-
-
-    const user = await User.create({ name: "lucas", age: 23, email: "lucas7justino@gmail.com"})
-    // const user = new User({ name: "kyle", age: 22})
-    // await user.save()
+    //returning a sjngle user
+    const user = await User.findById("649b3e591178e0bf45cc8128")
     console.log(user)
   } catch (error) {
-    console.log(error.message)
+
   }
 }
 
