@@ -16,8 +16,9 @@ mongoose.connect(process.env.DATABASE_CLOUD, { useNewUrlParser: true}).then(()=>
 
 async function run() {
 
-  const user = new User({ name: "kyle", age: 22})
-  await user.save()
+  const user = await User.create({ name: "lucas", age: 24 })
+  // const user = new User({ name: "kyle", age: 22})
+  // await user.save()
   console.log(user)
 }
 
