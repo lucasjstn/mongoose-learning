@@ -10,8 +10,17 @@ mongoose.connect(process.env.DATABASE_CLOUD, { useNewUrlParser: true}).then(()=>
 })
 
 //creating an instance of a new User
-const user = new User({ name: "kyle", age: 22})
 
 //saving the user to the database
-user.save().then(()=> { console.log("User saved")})
+//user.save().then(()=> { consolelog("User saved")})
+
+async function run() {
+
+  const user = new User({ name: "kyle", age: 22})
+  await user.save()
+  console.log(user)
+}
+
+run()
+
 
