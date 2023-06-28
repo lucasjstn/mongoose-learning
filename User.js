@@ -46,5 +46,8 @@ const userSchema = new mongoose.Schema({
   address: addressSchema 
 })
 
+userSchema.methods.sayHi = function() {
+  console.log(`Hi, my name is ${this.name}`)
+}
 //create and export the model of that schema
 module.exports = mongoose.model("User", userSchema)
