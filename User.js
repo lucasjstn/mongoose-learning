@@ -49,5 +49,15 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.sayHi = function() {
   console.log(`Hi, my name is ${this.name}`)
 }
+
+userSchema.statics.findByName = function(name) {
+  return this.where({name: new RegExp(name, "l")})
+}
+
+//ensuring updatedAt is updated whener you call save
+userSchema.pre('save', function(next) {
+  this.updatedAt = Date.now()
+  next()
+})
 //create and export the model of that schema
 module.exports = mongoose.model("User", userSchema)

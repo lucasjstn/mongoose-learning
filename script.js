@@ -17,9 +17,8 @@ mongoose.connect(process.env.DATABASE_CLOUD, { useNewUrlParser: true}).then(()=>
 async function run() {
   try {
     //returning a sjngle user
-    const user = await User.findOne({ name: "lucas" })
+    const user = await User.where.findByName("l")
     console.log(user)
-    user.sayHi()
   } catch (error) {
 
   }
